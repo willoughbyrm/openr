@@ -58,7 +58,9 @@ find_library(BENCHMARK follybenchmark PATHS)
 find_path(RE2_INCLUDE_DIR re2/re2.h)
 find_path(ZMQ_INCLUDE_DIR zmq.h)
 
-set(FOLLY_EXCEPTION_TRACER)
+# Disable until Open Source has this enabled
+set(FOLLY_USE_SYMBOLIZER OFF)
+set(FOLLY_EXCEPTION_TRACER OFF)
 if (TARGET Folly::folly_exception_tracer)
   set(FOLLY_EXCEPTION_TRACER Folly::folly_exception_tracer)
 endif()
